@@ -24,7 +24,6 @@ int task1_sol(const std::vector< std::string > &input){
 
         while (std::find(line.begin() + n, line.end(), error) == line.end()){
             error = line[++i];
-            
         }
 
         result += get_priority(error);
@@ -39,7 +38,7 @@ int task2_sol(const std::vector< std::string > &input){
         const std::string &line1 = input[i], &line2 = input[i+1], &line3 = input[i+2];
         for (char c : line1){
             if ( (std::find(line2.begin(), line2.end(), c) != line2.end()) && 
-                (std::find(line3.begin(), line3.end(), c) != line3.end()) ){
+                 (std::find(line3.begin(), line3.end(), c) != line3.end()) ){
                 result += get_priority(c);
                 break;
            } 
