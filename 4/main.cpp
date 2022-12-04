@@ -25,7 +25,7 @@ std::array<int, 4> parse_line(const std::string& line){
 }
 
 bool is_subinterval(int x1, int x2, int y1, int y2){
-    return (x1 >= y1) && (x2 <= y2);
+    return ((x1 >= y1) && (x2 <= y2)) || ((y1 >= x1) && (y2 <= x2));
 }
 
 bool overlap(int x1, int x2, int y1, int y2){
@@ -40,10 +40,6 @@ int solution1(const std::vector<std::string> &lines){
 
         if (is_subinterval(intervals[0], intervals[1], 
                            intervals[2], intervals[3]))
-            result += 1;
-
-        else if (is_subinterval(intervals[2], intervals[3],
-                                intervals[0], intervals[1]))
             result += 1;
     }
     
