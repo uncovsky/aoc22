@@ -7,23 +7,6 @@
 #include <sstream>
 #include <tuple>
 
-std::vector< std::string > split_line(std::string line, char delim=' '){
-    std::istringstream input;
-    input.str(line);
-    int i = 0;
-    
-    std::string word;
-    std::vector< std::string > result;
-    while (getline(input, word, delim)){
-        result.push_back(word);
-        i++;
-    }
-
-    return result;
-}
-
-
-
 int simulate_knots(const std::vector<std::string> &lines, size_t knots){
 
     int head_pos[] = {0, 0}; 

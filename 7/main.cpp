@@ -19,22 +19,6 @@ struct node_t {
     }
 };
 
-std::vector< std::string > split_line(std::string line, char delim=' '){
-    std::istringstream input;
-    input.str(line);
-    int i = 0;
-    
-    std::string word;
-    std::vector< std::string > result;
-    while (getline(input, word, delim)){
-        i++;
-        result.push_back(word);
-    }
-
-    return result;
-}
-
-
 void parse_filedata(const std::vector< std::string > &lines, node_t& root, 
                                                              size_t &line_num){
     // while there are lines to parse
@@ -78,9 +62,6 @@ node_t build_filetree(const std::vector< std::string > &lines){
     size_t line_num = 1;
     node_t root(0);
     parse_filedata(lines, root, line_num);
-
-    std::cout << root.size << std::endl;
-
     return root;
 }
 
